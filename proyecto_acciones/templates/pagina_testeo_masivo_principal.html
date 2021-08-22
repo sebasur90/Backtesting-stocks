@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css_pagina_estrat_principal.css' %} " rel="stylesheet">
+    <title>TESTEO MASIVO</title>
+</head>
+
+<body>
+    <a href="http://127.0.0.1:8000/"> volver</a>
+    <h1>ENCONTRAR MEJOR CONFIGURACION ESTRATEGIA</h1>
+    <p>
+        Me permite encontrar la mejor configuracion para cada estrategia en particular.
+    </p>
+    </h3>
+
+
+    <form action="/testeo_masivo_corrido/" method="GET">
+        <div>
+            <label for="start">Start date:</label>
+            <input type="date" id="start" name="trip-start" value="2012-01-01" min="2012-01-01" max="2021-07-1">
+            <label for="end">End date:</label>
+            <input type="date" id="end" name="trip-end" value="2020-07-22" min="2012-01-01" max="2021-07-20">
+        </div>
+        <div>
+            <select name="dropdown_estrategias" id='dropdown_estrategias'>
+                <option selected="selected">SELECCIONAR ESTRATEGIA:</option>
+                {% for estrat in nombre_estrategias %}
+                <option value={{estrat}} name="estrategia" id='estrategia_elegida'>{{estrat}}</option>
+                {% endfor %}
+            </select>
+            <div name="seteos" id="seteos" style="display:none;"> </div>
+            <div id='descripcion_seteos' style="display:none;"></div>
+        </div>
+
+
+        <div>
+
+            <select name="stop_loss">
+                <option selected="selected" disabled>CORRER CON STOP LOSS ?:</option>
+                <option value=SI name="stop">SI</option>
+                <option value=NO name="stop">NO</option>
+            </select>
+        </div>
+        <div>
+            <select name="dropdown_acciones">
+                <option selected="selected" disabled>SELECCIONAR ACCION:</option>
+                <optgroup label="empresas_extranjeras">
+                    {% for empresa in empresas_extranjeras %}
+                    <option value={{empresa}} name="emp">{{empresa}}</option>
+                    {% endfor %}
+                </optgroup>
+                <optgroup label="empresas_argentinas">
+                    {% for empresa in empresas_argentinas %}
+                    <option value={{empresa}} name="emp">{{empresa}}</option>
+                    {% endfor %}
+                </optgroup>
+                <optgroup label="empresas_compradas">
+                    {% for empresa in empresas_compradas %}
+                    <option value={{empresa}} name="emp">{{empresa}}</option>
+                    {% endfor %}
+                </optgroup>
+            </select>
+        </div>
+        <input type="submit">
+    </form>
+
+
+    <script src="{% static 'js/pagina_testeo_masivo_principal.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESTRATEGIA PRINCIPAL</title>
+    <link href="{% static 'css_pagina_estrat_principal.css' %} " rel="stylesheet">
+</head>
+
+<body>
+    <a href="http://127.0.0.1:8000/"> volver</a>
+    <h1>EVALUAR ESTRATEGIA</h1>
+
+    <div>
+        <form action="/estrategia_corrida/" method="GET">
+            <div>
+                <label for="start">Start date:</label>
+                <input type="date" id="start" name="trip-start" value="2012-01-01" min="2012-01-01" max="2021-12-31">
+                <label for="end">End date:</label>
+                <input type="date" id="end" name="trip-end" value="2021-07-20" min="2012-01-01" max="2021-12-31">
+
+            </div>
+
+
+            <div>
+                <label for="fname">SELECCIONAR ESTRATEGIA A CORRER</label>
+                <select name="dropdown_estrategias" id='dropdown_estrategias'>
+                    <option selected="selected" class="selec_estratr">Seleccionar estrategia</option>
+                    {% for estrat in nombre_estrategias %}
+
+                    <option value={{estrat}} name="estrategia" id='estrategia_elegida'>{{estrat}}
+                    </option>
+                    {% endfor %}
+                </select>
+                <div name="seteos" id="seteos" style="display:none;"> </div>
+                <div id='descripcion_seteos' style="display:none;"></div>
+            </div>
+            <p></p>
+
+            <div>
+                <label for="fname">CORRER CON STOP LOSS ?</label>
+                <select name="stop_loss">
+                    <option selected="selected" disabled>Elegir opcion</option>
+                    <option value=SI name="stop">SI</option>
+                    <option value=NO name="stop">NO</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="fname">SELECCIONAR ACCION</label>
+                <select name="dropdown_acciones">
+                    <option selected="selected" disabled>SELECCIONAR</option>
+                    <optgroup label="empresas_extranjeras">
+                        {% for empresa in empresas_extranjeras %}
+                        <option value={{empresa}} name="emp">{{empresa}}</option>
+                        {% endfor %}
+                    </optgroup>
+                    <optgroup label="empresas_argentinas">
+                        {% for empresa in empresas_argentinas %}
+                        <option value={{empresa}} name="emp">{{empresa}}</option>
+                        {% endfor %}
+                    </optgroup>
+                </select>
+            </div>
+
+
+            <input type="submit" value="CORRER ESTRATEGIA">
+        </form>
+    </div>
+
+
+    <script src="{% static 'js/pagina_estrategia_principal.js' %}"></script>
+</body>
+
+</html>
