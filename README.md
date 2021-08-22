@@ -13,7 +13,8 @@ El modelo cuenta con 3 apartados:
 * Screener : barre todos los stocks de mercado y arroja las accciones que dan compra segun la estrategia elegida.
 
 
-El primero ![inicio](https://user-images.githubusercontent.com/85622107/130371202-a82f77bb-41f3-4325-bf51-62f669bc91cc.png)
+![inicio](https://user-images.githubusercontent.com/85622107/130371396-608489f1-067b-419c-beb6-db64622579a2.png)
+
 
 Pagina para evaluar estrategia:
 ![Evalua estrategia](https://user-images.githubusercontent.com/85622107/130371345-99c7f00a-6961-47e4-bf71-6f545f74fe5f.png)
