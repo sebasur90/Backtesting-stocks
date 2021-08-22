@@ -28,5 +28,13 @@ Tabla con todos los movimientos de la estrategia:
 Pagina para encontrar mejor configuracion:
 ![Mejores combinaciones](https://user-images.githubusercontent.com/85622107/130371376-0ff90893-df7d-493d-89d3-5ad034863cb3.png)
 
-El resultado nos dara:![Mejores combinaciones 2](https://user-images.githubusercontent.com/85622107/130371378-1469d3b5-dc2b-44c2-b645-eb6de9fb1028.png)
+El resultado nos dara una tabla con las mejores 10 combinaciones ( en caso de que sean mas de 10) y el grafico comparativo entre ellas.
+Podremos usar los botones de revisar para entrar en cada estrategia y ver sus movimientos.
+![Mejores combinaciones 2](https://user-images.githubusercontent.com/85622107/130371378-1469d3b5-dc2b-44c2-b645-eb6de9fb1028.png)
 
+
+Pagina Screener:
+![screener](https://user-images.githubusercontent.com/85622107/130371445-a3a661f3-f581-4e83-8a7a-233fb3d4cdfe.png)
+
+El resultado del screener nos arroja las acciones a comprar segun la estrategia elegida.
+![Resultados Screener](https://user-images.githubusercontent.com/85622107/130371456-e3aa1871-b437-49f2-804d-05a85994fd47.png)
