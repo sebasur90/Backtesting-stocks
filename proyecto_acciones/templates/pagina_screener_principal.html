@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'css_pagina_estrat_principal.css' %} " rel="stylesheet">
+</head>
+
+<body>
+    <a href="http://127.0.0.1:8000/"> volver</a>
+    <h1>STOCK SCREENER</h1>
+
+
+    <div>
+        <p>El stock screener es una herramienta que se utiliza para seleccionar acciones específicas
+            entre las miles que se pueden encontrar , en base a un criterio o estrategia preseleccionada por el usuario.
+
+        </p>
+        <p>
+            Este proceso puede demorar unos minutos..
+        </p>
+
+    </div>
+
+    <div>
+        <form action="/pagina_screener_principal_corrida/" method="GET">
+
+            <div>
+                <label for="fname">SELECCIONAR ESTRATEGIA</label>
+                <select name="dropdown_estrategias" id='dropdown_estrategias'>
+                    <option selected="selected" class="selec_estratr">Seleccionar estrategia</option>
+                    {% for estrat in nombre_estrategias %}
+
+                    <option value={{estrat}} name="estrategia" id='estrategia_elegida'>{{estrat}}
+                    </option>
+                    {% endfor %}
+                </select>
+                <div name="seteos" id="seteos" style="display:none;"> </div>
+            </div>
+            <p></p>
+
+
+            <div>
+                <label for="fname">SELECCIONAR STOCKS</label>
+                <select name="dropdown_acciones">
+                    <option selected="selected" disabled>SELECCIONAR</option>
+                    {% for empresa in empresas %}
+                    <option value={{empresa}} name="emp">{{empresa}}</option>
+                    {% endfor %}
+
+                </select>
+            </div>
+
+            <div>
+                <label for="fname">ESPECIFICAR DIAS DE MARGEN</label>
+                <input type="text" name="margen">
+                <p>Por ej, si ingreso 5 dias de margen ,el Screener me dará como respuesta las acciones que en los
+                    ultimos 5 dias me den señal de compra.
+                </p>
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+
+    <script src="{% static 'js/pagina_estrategia_principal.js' %}"></script>
+</body>
+
+</html>

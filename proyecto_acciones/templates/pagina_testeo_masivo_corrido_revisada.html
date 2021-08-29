@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {{ accion_evaluada|json_script:"accion_evaluada" }}
+    {{ momento_compra|json_script:"momento_compra" }}
+    {{ momento_venta|json_script:"momento_venta" }}
+    {{ nombre_completo_accion|json_script:"nombre_completo_accion" }}
+
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/stocktools/gui.css">
+    <link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/annotations/popup.css">
+
+
+    <script src="https://code.highcharts.com/stock/indicators/indicators-all.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/drag-panes.js"></script>
+
+    <script src="https://code.highcharts.com/modules/annotations-advanced.js"></script>
+    <script src="https://code.highcharts.com/modules/price-indicator.js"></script>
+    <script src="https://code.highcharts.com/modules/full-screen.js"></script>
+
+    <script src="https://code.highcharts.com/modules/stock-tools.js"></script>
+
+    <link href="{% static 'css_pagina_estrat_principal.css' %} " rel="stylesheet">
+
+</head>
+
+<body>
+    < <a href="/testeo_masivo_principal/"> volver</a>
+        <h1>ESTRATEGIA CORRIDA</h1>
+        <h2> {{nombre_completo_accion}}</h2>
+
+
+
+        <div id="container" style="height: 400px; min-width: 310px"></div>
+
+
+
+
+
+        <div id="container3" style="height: 400px"></div>
+
+        <script src="{% static 'js/pagina_estrategia_corrida.js' %}"></script>
+
+</body>
+
+
+
+</html>
